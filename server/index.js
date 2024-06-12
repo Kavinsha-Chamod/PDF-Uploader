@@ -7,19 +7,22 @@ const path = require('path');
 require('dotenv').config();
 const cors = require('cors');
 
-const auth = require('./routes/auth');
-const pdf = require('./routes/pdf');
-const { connection } = require('./db');  // Ensure this exists and is correct
+const auth = require('./routes/userRoutes');
+const pdf = require('./routes/pdfRoutes');
+const { connection } = require('./db');  
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:3000', 
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', 
+  credentials: true, 
+}));
 const PORT = process.env.PORT || 5000;
 const JWT_SECRET = process.env.JWT_SECRET;
 
 app.use(express.json());
 app.use(morgan('combined', { stream: winston.stream.write }));
 
-// Define routes here
 app.use('/api/auth', auth);
 app.use('/api/pdf', pdf);
 
