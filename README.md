@@ -19,7 +19,7 @@ This is a simple web application for uploading, listing, and viewing PDF files. 
 
 ## Setup
 1. Clone the repository: 
-git clone https://github.com/your-username/pdf-uploader.git
+git clone [https://github.com/your-username/pdf-uploader.git](https://github.com/Kavinsha-Chamod/PDF-Uploader.git)
 
 2. Server side and the Client side both are in this file. So first you can install dependencies:
 2. i. cd server
