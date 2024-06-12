@@ -1,0 +1,36 @@
+.pdf-viewer {
+  margin-top: 20px;
+  text-align: center;
+  padding: 20px;
+}
+
+.pdf-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.pdf-box {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.pdf-box:hover {
+  transform: translateY(-5px);
+}
+
+.pdf-box a {
+  text-decoration: none;
+}
+
+.pdf-box a:hover {
+  text-decoration: none;
+}
