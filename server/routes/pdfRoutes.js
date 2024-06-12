@@ -29,9 +29,20 @@ router.post('/upload', auth, upload.single('pdf'), async (req, res) => {
       return res.status(400).send('No file uploaded');
     }
 
+    const existingPdf = await Pdf.findOne({
+      fileName: req.file.originalname,
+      size: req.file.size,
+      userId: req.user.userId
+    });
+
+    if (existingPdf) {
+      return res.status(400).send('This file has already been uploaded.');
+    }
+
     const newPdf = new Pdf({
       fileName: req.file.originalname,
       filePath: req.file.path,
+      size: req.file.size,
       userId: req.user.userId 
     });
 
