@@ -16,7 +16,9 @@ const PdfCard = () => {
         });
         setPdfs(data);
       } catch (err) {
-        alert("Error fetching PDFs: " + err.response?.data || err.message);
+        alert('Session expired. Please login again.');
+        localStorage.removeItem('token');
+        window.location.href = '/login';
       }
     };
     if (user) {
